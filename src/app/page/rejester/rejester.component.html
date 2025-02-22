@@ -1,1 +1,153 @@
-<p>rejester works!</p>
+<div
+  class="flex flex-col md:flex-row justify-center items-center min-h-[50vh] w-full"
+>
+  <div
+    class="flex flex-wrap justify-center md:flex-col p-6 rounded-lg mt-6"
+  >
+    <div>
+      <h1 class="text-2xl font-semibold text-center mb-6">خوش آمدید</h1>
+      <form
+        [formGroup]="registerForm"
+        (ngSubmit)="onSubmit()"
+        class=" gap-4"
+      >
+        <div class="flex flex-col md:flex-row gap-3">
+          <mat-form-field>
+            <mat-label>اسم</mat-label>
+            <input
+              matInput
+              type="text"
+              formControlName="firstName"
+              autocomplete="off"
+            />
+            <mat-icon matPrefix>person</mat-icon>
+            <mat-error
+              *ngIf="registerForm.controls['firstName'].hasError('required')"
+            >
+              اسم الزامی است
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>فامیل</mat-label>
+            <input
+              matInput
+              type="text"
+              formControlName="lastName"
+              autocomplete="off"
+            />
+            <mat-icon matPrefix>group</mat-icon>
+            <mat-error
+              *ngIf="registerForm.controls['lastName'].hasError('required')"
+            >
+              فامیل اجباری است
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="flex flex-col md:flex-row gap-3">
+          <mat-form-field class="">
+            <mat-label>نام کاربری</mat-label>
+            <mat-icon matPrefix>person_pin</mat-icon>
+            <input
+              matInput
+              type="text"
+              formControlName="userName"
+              autocomplete="off"
+            />
+
+            <mat-error
+              *ngIf="registerForm.controls['userName'].hasError('required')"
+            >
+              نام کاربری الزامی است
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="">
+            <mat-label>پسورد</mat-label>
+            <mat-icon matPrefix>lock</mat-icon>
+            <input
+              matInput
+              type="password"
+              formControlName="password"
+              autocomplete="off"
+            />
+            <mat-error
+              *ngIf="registerForm.controls['password'].hasError('required')"
+            >
+              پسورد الزامی است
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="flex flex-col md:flex-row gap-3">
+          <mat-form-field class="">
+            <mat-label>ایمیل</mat-label>
+            <mat-icon matIconPrefix>mail</mat-icon>
+            <input
+              matInput
+              type="email"
+              formControlName="email"
+              autocomplete="off"
+            />
+            <mat-error
+              *ngIf="registerForm.controls['email'].hasError('required')"
+            >
+              اجباری است
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="">
+            <mat-label>سن</mat-label>
+            <mat-icon matIconPrefix>theater_comedy</mat-icon>
+            <input
+              matInput
+              type="text"
+              formControlName="age"
+              autocomplete="off"
+            />
+            <mat-error
+              *ngIf="registerForm.controls['age'].hasError('required')"
+            >
+              سن الزامی است
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field >
+          <mat-label>شماره همراه</mat-label>
+          <mat-icon matPrefix>call</mat-icon>
+          <input
+            matInput
+            type="text"
+            formControlName="phone"
+            autocomplete="off"
+          />
+          <mat-error
+            *ngIf="registerForm.controls['phone'].hasError('required')"
+          >
+            شماره همراه الزامی است
+          </mat-error>
+        </mat-form-field>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 mt-8 text-white font-bold py-3 px-6 rounded-lg transition duration-300 disabled:bg-gray-400"
+          [disabled]="registerForm.invalid"
+        >
+          ثبت نام
+        </button>
+      </form>
+      <div class="m-6 text-center">
+        <span class="text-gray-600 text-sm">قبلا ثبت نام کردید؟</span>
+        <a href="#" class="text-blue-600 text-sm">ورود</a>
+      </div>
+      <div class="text-center">
+        <a href="#"><i class="bx bxl-facebook m-2"></i></a>
+        <a href="#"><i class="bx bxl-google m-2"></i></a>
+        <a href="#"><i class="bx bxl-instagram m-2"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex justify-center items-center w-[600px] h-[600px]">
+    
+    <img src="authentication.svg" alt="" class="">
+      
+  </div>
+</div>

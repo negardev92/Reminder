@@ -1,24 +1,20 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
+
+// استفاده از ngx-toastr با @use به جای @import
+@use 'ngx-toastr/toastr' as toastr;
+
+// استفاده از Angular Material و تخصیص به متغیر mat
 @use '@angular/material' as mat;
+
+// اضافه کردن Tailwind CSS
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @include mat.theme((
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
-}/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
+mat-error {
+    color: red !important;
+    text-align: right;
+  }
+ 
